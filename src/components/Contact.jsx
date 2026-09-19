@@ -1,96 +1,101 @@
+import { motion } from "framer-motion";
+
 function Contact() {
+  const contactItems = [
+    {
+      icon: "📧",
+      title: "Email",
+      value: "ansarihasan1062@gmail.com",
+      href: "mailto:ansarihasan1062@gmail.com",
+      external: false,
+    },
+    {
+      icon: "📱",
+      title: "Phone",
+      value: "+91 7470507311",
+      href: "tel:7470507311",
+      external: false,
+    },
+    {
+      icon: "💻",
+      title: "GitHub",
+      value: "github.com/HasanAnsari12",
+      href: "https://github.com/HasanAnsari12",
+      external: true,
+    },
+    {
+      icon: "🔗",
+      title: "LinkedIn",
+      value: "linkedin.com/in/hasan-ansari-96a9022b4",
+      href: "https://www.linkedin.com/in/hasan-ansari-96a9022b4/",
+      external: true,
+    },
+  ];
+
   return (
-    <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-14">
-        <p className="text-cyan-400 font-semibold tracking-widest uppercase">
-          Contact
+    <section id="contact" className="py-20 px-6 max-w-7xl mx-auto relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        className="text-center mb-12"
+      >
+        <p className="text-[#3B82F6] font-bold tracking-widest uppercase text-xs md:text-sm mb-2">
+          GET IN TOUCH
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-bold mt-2">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1A1A1A] tracking-tight">
           Let's Work Together
         </h2>
 
-        <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-          Open to internships, freelance opportunities, collaborations,
-          and exciting software development projects.
+        <p className="text-[#6B7280] mt-3 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+          Open to React Native developer roles, full-stack software engineering opportunities, and project collaborations.
         </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        {contactItems.map((item, idx) => (
+          <motion.a
+            key={item.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+            href={item.href}
+            target={item.external ? "_blank" : "_self"}
+            rel={item.external ? "noreferrer" : undefined}
+            className="water-glass-card water-glass-hover rounded-2xl p-6 border border-white/90 shadow-xs block"
+          >
+            <h3 className="text-[#3B82F6] text-lg font-bold mb-1 flex items-center gap-2">
+              <span>{item.icon}</span> {item.title}
+            </h3>
+
+            <p className="text-[#1A1A1A] font-semibold text-base md:text-lg break-all">
+              {item.value}
+            </p>
+          </motion.a>
+        ))}
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-
-        {/* Email */}
-        <a
-          href="mailto:ansarihasan1062@gmail.com"
-          className="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-cyan-500 transition block"
-        >
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            📧 Email
-          </h3>
-
-          <p className="text-slate-300 break-all">
-            ansarihasan1062@gmail.com
-          </p>
-        </a>
-
-        {/* Phone */}
-        <a
-          href="tel:7470507311"
-          className="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-cyan-500 transition block"
-        >
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            📱 Phone
-          </h3>
-
-          <p className="text-slate-300">
-            +91 7470507311
-          </p>
-        </a>
-
-        {/* GitHub */}
-        <a
-          href="https://github.com/HasanAnsari12"
-          target="_blank"
-          rel="noreferrer"
-          className="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-cyan-500 transition block"
-        >
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            💻 GitHub
-          </h3>
-
-          <p className="text-slate-300">
-            github.com/HasanAnsari12
-          </p>
-        </a>
-
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/hasan-ansari-96a9022b4/"
-          target="_blank"
-          rel="noreferrer"
-          className="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-cyan-500 transition block"
-        >
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            🔗 LinkedIn
-          </h3>
-
-          <p className="text-slate-300">
-            linkedin.com/in/hasan-ansari-96a9022b4
-          </p>
-        </a>
-      </div>
-
-      <div className="text-center mt-12">
-        <p className="text-slate-400 mb-5">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        className="text-center mt-10"
+      >
+        <p className="text-[#6B7280] font-medium mb-5 text-sm">
           📍 Bhopal, Madhya Pradesh, India
         </p>
 
         <a
           href="mailto:ansarihasan1062@gmail.com"
-          className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-xl font-semibold transition"
+          className="btn-water-primary px-8 py-3.5 rounded-xl font-semibold text-sm md:text-base"
         >
-          Contact Me
+          Send Email Direct
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

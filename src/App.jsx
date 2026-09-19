@@ -9,9 +9,9 @@ import ParticleBackground from "./components/ParticleBackground";
 
 function App() {
   return (
-    <div className="bg-slate-950 text-white min-h-screen" style={{ position: "relative" }}>
+    <div className="bg-[#F5F7FB] text-[#1A1A1A] min-h-screen relative overflow-x-hidden selection:bg-[#5B8CFF]/20 selection:text-[#3B82F6]">
       <ParticleBackground />
-      <div style={{ position: "relative", zIndex: 10 }}>
+      <div className="relative z-10">
         <Navbar />
         <Hero />
         <About />

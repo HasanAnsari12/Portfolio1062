@@ -1,72 +1,86 @@
+import { motion } from "framer-motion";
+
 function About() {
   return (
-    <section id="about" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="mb-12">
-        <p className="text-cyan-400 font-semibold mb-2">ABOUT ME</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
+    <section id="about" className="py-20 px-6 max-w-7xl mx-auto relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        className="mb-10"
+      >
+        <p className="text-[#3B82F6] font-bold tracking-wider uppercase mb-2 text-xs md:text-sm">
+          ABOUT ME
+        </p>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1A1A1A] tracking-tight">
           Passionate Developer & Problem Solver
         </h2>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        {[
+          {
+            icon: "🎓",
+            title: "Education",
+            desc: "B.Tech Computer Science Engineering",
+          },
+          {
+            icon: "📱",
+            title: "Mobile & Web",
+            desc: "React Native & Full Stack Developer",
+          },
+          {
+            icon: "🧠",
+            title: "DSA & Problem Solving",
+            desc: "200+ LeetCode Problems Solved",
+          },
+          {
+            icon: "🚀",
+            title: "Engineering",
+            desc: "Scalable APIs & Real-Time Systems",
+          },
+        ].map((card, idx) => (
+          <motion.div
+            key={card.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+            className="water-glass-card water-glass-hover p-5 rounded-2xl border border-white/90 shadow-xs"
+          >
+            <h3 className="text-[#3B82F6] text-lg font-bold mb-2 flex items-center gap-2">
+              <span>{card.icon}</span> {card.title}
+            </h3>
+            <p className="text-[#6B7280] text-sm font-medium leading-snug">
+              {card.desc}
+            </p>
+          </motion.div>
+        ))}
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition">
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            🎓 Education
-          </h3>
-          <p className="text-slate-300">
-            B.Tech Computer Science Engineering
-          </p>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition">
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            💻 Development
-          </h3>
-          <p className="text-slate-300">
-            Full Stack & React Native Developer
-          </p>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition">
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            🧠 DSA
-          </h3>
-          <p className="text-slate-300">
-            200+ LeetCode Problems Solved
-          </p>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition">
-          <h3 className="text-cyan-400 text-xl font-bold mb-3">
-            🚀 Projects
-          </h3>
-          <p className="text-slate-300">
-            10+ Real World Projects Built
-          </p>
-        </div>
-      </div>
-
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
-        <p className="text-slate-300 text-lg leading-8">
-          Hi, I'm <span className="text-cyan-400 font-semibold">Hasan Ansari</span>,
-          a passionate Full Stack Developer and React Native Developer with a
-          strong foundation in Java, JavaScript, React.js, React Native,
-          Node.js, Express.js, MongoDB, MySQL, and Data Structures &
-          Algorithms.
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        className="water-glass-card rounded-2xl p-6 md:p-8 border border-white/90 shadow-xs"
+      >
+        <p className="text-[#1A1A1A] text-base md:text-lg leading-relaxed">
+          Hi, I'm <span className="text-[#3B82F6] font-bold">Hasan Ansari</span>,
+          a Software Developer and Founder of <span className="text-[#3B82F6] font-bold">Nexora</span> specializing in
+          building production-grade mobile applications with <span className="text-[#3B82F6] font-bold">React Native</span> and robust full-stack systems using <span className="text-[#3B82F6] font-bold">NestJS, Node.js, PostgreSQL, and Prisma</span>.
         </p>
 
-        <p className="text-slate-400 text-lg leading-8 mt-6">
-          I enjoy building modern web applications, mobile applications, and
-          solving complex programming challenges. I have solved more than
-          <span className="text-cyan-400 font-semibold"> 200+ LeetCode problems </span>
-          and continuously improve my problem-solving and development skills.
+        <p className="text-[#6B7280] text-base md:text-lg leading-relaxed mt-4">
+          I am driven by clean code principles, strong computer science fundamentals, and real-time backend architecture. Having solved over{" "}
+          <span className="text-[#3B82F6] font-bold">200+ LeetCode problems</span>, I focus on building performant, reliable applications with secure JWT authentication and efficient data models.
         </p>
 
-        <p className="text-slate-400 text-lg leading-8 mt-6">
-          My goal is to become a skilled Software Engineer who creates scalable,
-          high-performance applications and delivers great user experiences.
+        <p className="text-[#6B7280] text-base md:text-lg leading-relaxed mt-4">
+          My objective is to contribute as a Software Engineer in high-impact engineering teams where I can design intuitive mobile experiences and backend architectures.
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

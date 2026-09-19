@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+:root {
+  --color-primary: #5B8CFF;
+  --color-secondary: #7AA2FF;
+  --color-accent: #3B82F6;
+  --color-bg: #F5F7FB;
+  --color-glass: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(255, 255, 255, 0.3);
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #6B7280;
+}
 
 html {
   scroll-behavior: smooth;
@@ -6,35 +18,114 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-}
-body {
-  background: #020617;
-  color: white;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F5F7FB;
+  color: #1A1A1A;
+  overflow-x: hidden;
 }
 
+/* Glassmorphism Card Utilities */
+.water-glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 4px 20px -2px rgba(91, 140, 255, 0.06),
+    0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+/* Water Surface Accent */
+.water-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Hover Animation: Slight Scale (1.02) + Soft Shadow */
+.water-glass-hover {
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+}
+
+.water-glass-hover:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 12px 28px -6px rgba(91, 140, 255, 0.14),
+    0 4px 12px -2px rgba(59, 130, 246, 0.08);
+  border-color: rgba(91, 140, 255, 0.4);
+}
+
+/* Water Button Primary (Rounded + Gradient + Soft Hover) */
+.btn-water-primary {
+  background: linear-gradient(135deg, #5B8CFF 0%, #3B82F6 100%);
+  color: #ffffff;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.28);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, filter 0.25s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-water-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.38);
+  filter: brightness(1.03);
+}
+
+/* Water Button Secondary (Outline Glass + Soft Hover) */
+.btn-water-secondary {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(91, 140, 255, 0.3);
+  color: #3B82F6;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(91, 140, 255, 0.06);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, background-color 0.25s ease-out, border-color 0.25s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-water-secondary:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(91, 140, 255, 0.12);
+  color: #1D4ED8;
+}
+
+/* Smooth Water Glow Text Gradient */
+.text-gradient-water {
+  background: linear-gradient(135deg, #3B82F6 0%, #5B8CFF 50%, #7AA2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #22d3ee;
+  background: rgba(91, 140, 255, 0.4);
   border-radius: 20px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
 ::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-* {
-  scroll-behavior: smooth;
-}
-
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-8px);
+  background: #F5F7FB;
 }
