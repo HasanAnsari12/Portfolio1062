@@ -44,7 +44,7 @@ function Hero() {
             Founder of <span className="text-[#3B82F6] font-semibold">Nexora</span> — focused on delivering production-ready architecture, clean code, and intuitive user experiences.
           </p>
 
-          {/* Tech Badges */}
+          {/* Clean Unified Tech Badges Section */}
           <div className="flex flex-wrap gap-2 mb-8">
             {[
               "React Native",
@@ -55,6 +55,7 @@ function Hero() {
               "JWT Auth",
               "API Integration",
               "200+ LeetCode",
+              "Founder of Nexora",
             ].map((item) => (
               <span
                 key={item}
@@ -111,7 +112,7 @@ function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Side Avatar */}
+        {/* Right Side Avatar - Clean Profile Frame without overlapping absolute badges */}
         <div className="hidden lg:flex justify-center">
           <motion.div
             className="relative"
@@ -119,11 +120,11 @@ function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            {/* Soft Glow Behind Image */}
+            {/* Soft Ambient Glow Behind Image */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#5B8CFF]/20 to-[#3B82F6]/20 blur-2xl rounded-full transform scale-105"></div>
 
             {/* Main Avatar Ring */}
-            <div className="relative w-[380px] h-[380px] rounded-full bg-gradient-to-tr from-[#5B8CFF] via-[#7AA2FF] to-[#3B82F6] p-1 shadow-md">
+            <div className="relative w-[340px] h-[340px] md:w-[380px] md:h-[380px] rounded-full bg-gradient-to-tr from-[#5B8CFF] via-[#7AA2FF] to-[#3B82F6] p-1 shadow-md">
               <div className="w-full h-full rounded-full bg-white/90 backdrop-blur-md p-1.5 flex items-center justify-center overflow-hidden">
                 <img
                   src="/hasan.jpg"
@@ -131,19 +132,6 @@ function Hero() {
                   className="w-full h-full rounded-full object-cover shadow-inner"
                 />
               </div>
-            </div>
-
-            {/* Static Professional Badges */}
-            <div className="absolute top-4 -left-6 water-glass-card px-4 py-2 rounded-xl border border-white/90 shadow-sm font-semibold text-[#1A1A1A] text-xs flex items-center gap-2">
-              🚀 <span className="bg-gradient-to-r from-[#3B82F6] to-[#5B8CFF] bg-clip-text text-transparent font-bold">Nexora Founder</span>
-            </div>
-
-            <div className="absolute top-20 -right-8 water-glass-card px-4 py-2 rounded-xl border border-white/90 shadow-sm font-semibold text-[#1A1A1A] text-xs flex items-center gap-2">
-              📱 <span className="text-[#3B82F6]">React Native</span>
-            </div>
-
-            <div className="absolute bottom-16 -left-4 water-glass-card px-4 py-2 rounded-xl border border-white/90 shadow-sm font-semibold text-[#1A1A1A] text-xs flex items-center gap-2">
-              🧠 <span className="text-[#3B82F6]">DSA & Logic Building</span>
             </div>
           </motion.div>
         </div>
